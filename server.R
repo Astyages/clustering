@@ -33,7 +33,7 @@ shinyServer(
         data <- dataset[, col]
         clust <- hclust(dist(data)^2, method = "ward.D")
         g <- cutree(clust, k = input$k)
-        plot(data, col = g)
+        plot(data, col = g, pch = 19)
   })
   
 })

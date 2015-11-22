@@ -8,12 +8,18 @@
 library(shiny)
 
 shinyUI(pageWithSidebar(
-  
-  # Application title
+
   headerPanel("Simple Interactive Clustering"),
   
-  # Sidebar with a slider input for number of bins
   sidebarPanel(
+        p("This simple app allows you to choose one of three datasets and create and plot clusters to show the groupings of similar variables.
+          The app takes only the quantitative variables in the selected dataset and creates hierarchical clusters using the ward metod.
+          It then plots a dendogram of the variables with a default rectangle grouping. 
+          It is left to your discretion into how many clusters the variables should be grouped. 
+          This decision is reflected in the second plot. 
+          Here, every data point is colored per its assigned cluster and plotted for every quantitative variable in the dataset."
+          ),
+        p("Play around with the number of clusters to see how the variables are grouped and colored."),
     selectInput("datasets",
                 "Choose a dataset to cluster:",
                 choices = c("iris", "trees", "orchard sprays")),
@@ -22,7 +28,6 @@ shinyUI(pageWithSidebar(
     submitButton("Submit")
   ),
   
-  # Show a plot of the generated distribution
   mainPanel(
       h3("Ward-Clustering Dendogram"),
     plotOutput("ClusterDendogram"),
