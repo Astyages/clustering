@@ -7,7 +7,7 @@ transition: rotate
 Description
 ========================================================
 
-This simple Shiny app allows you to choose one of three datasets and create clusters and plot graphs to show the groupings of similar variables.
+This simple Shiny app allows you to choose one of three datasets and create clusters and plot graphs to show the groupings of similar variables. You can find it here:
 
 https://astyages.shinyapps.io/clustering
 
@@ -35,7 +35,20 @@ plot()
 # to plot both the dendogram and the pairs plot
 ```
 
-Foundations
+Example of Hierarchical Clustering
 ========================================================
 
-Hierarchical cstering is a descriptive analysis that groups together data points based on variable similarities. The similarity is calculated through the distance of quantitative variables. The method to calculated distance used in this app is the Ward method. 
+```r
+data(trees)
+hclust(dist(trees))
+```
+
+```
+
+Call:
+hclust(d = dist(trees))
+
+Cluster method   : complete 
+Distance         : euclidean 
+Number of objects: 31 
+```
